@@ -16,9 +16,15 @@ function memory(){
 
 
 const totalMem=os.totalmem();
-const mb=totalMem/1024;
-const gb =mb/1024;
+const gb=totalMem/(1024*1024*1024);
+
 return gb;
 }
-const totalMemory= totalmem();
-console.log("total memory in gb is"+totalMemory);
+const totalMemory= memory();
+console.log("total memory in gb is "+totalMemory);
+// wap that reads the content of the text file using fs
+const fs=require("fs");
+
+
+      const fileOpen=fs.readFileSync("./hello.txt",{ encoding: "utf-8" });
+console.log(fileOpen);
